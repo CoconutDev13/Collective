@@ -1,5 +1,7 @@
 const { Client, GatewayIntentBits, Partials, Collection } = require('discord.js');
 
+console.log("Kuriakos update for testing git")
+
 const {Guilds, GuildMembers, GuildMessages} = GatewayIntentBits;
 const {User, Message, GuildMember, ThreadMember, Channel} = Partials;
 
@@ -17,4 +19,4 @@ client.config = require('./config.json');
 client.login(client.config.token).then(() =>{
     loadEvents(client);
     loadCommands(client);
-})
+})  
