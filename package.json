@@ -12,7 +12,9 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "ascii-table": "^0.0.9",
     "discord.js": "^14.9.0",
+    "dotenv": "^16.0.3",
     "mongoose": "^7.0.3"
   },
   "devDependencies": {
