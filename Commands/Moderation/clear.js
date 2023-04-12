@@ -1,7 +1,7 @@
 const { SlashCommandBuilder, CommandInteraction, PermissionFlagsBits, EmbedBuilder} = require("discord.js")
 
 module.exports = {
-    data:new SlashCommandBuilder()
+    data: new SlashCommandBuilder()
     .setName('clear')
     .setDescription("Clear specific amount of messages from a target or channel.")
     .setDefaultMemberPermissions(PermissionFlagsBits.ManageMessages)
