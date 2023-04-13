@@ -18,11 +18,10 @@ module.exports = {
     };
 
     const directories = [
-      ...new Set(interaction.client.commands.mpa((cmd) => cmd.folder)),
+      ...new Set(interaction.client.commands.map((cmd) => cmd.folder)),
     ];
 
-    const formatString = (str) =>
-      `${str[0].toUpperCase()}${str.slice(1).toLowerCase()}`;
+    const formatString = (str) => `${str[0].toUpperCase()}${str.slice(1).toLowerCase()}`;
 
     const categories = directories.map((dir) => {
       const getCommands = interaction.client.commands
@@ -99,11 +98,11 @@ module.exports = {
           })
         );
 
-        interaction.update({embeds: [categoryEmbed]});
+      interaction.update({ embeds: [categoryEmbed] });
     });
 
     collector.on("end", () => {
-        initialMessage.edit({components: components(ture)});
+      initialMessage.edit({ components: components(ture) });
     });
   },
 };

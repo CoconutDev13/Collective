@@ -17,6 +17,7 @@ const client = new Client({
 
 client.commands = new Collection();
 
+console.log(process.env.TOKEN)
 client.login(process.env.TOKEN).then(() =>{
     loadEvents(client);
     loadCommands(client);
