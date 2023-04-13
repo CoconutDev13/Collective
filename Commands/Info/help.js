@@ -3,7 +3,7 @@ const {
   EmbedBuilder,
   SlashCommandBuilder,
   ActionRowBuilder,
-  SelectMenuBuilder,
+  StringSelectMenuBuilder,
 } = require("discord.js");
 
 module.exports = {
@@ -47,7 +47,7 @@ module.exports = {
 
     const components = (state) => [
       new ActionRowBuilder().addComponents(
-        new SelectMenuBuilder()
+        new StringSelectMenuBuilder()
           .setCustomId("help-menu")
           .setPlaceholder("Please select a category")
           .setDisabled(state)
@@ -69,12 +69,11 @@ module.exports = {
       components: components(false),
     });
 
-    const filter = (interaction) =>
-      interaction.user.id === interaction.member.id;
+    const filter = (interaction) => interaction.user.id === interaction.member.id;
 
     const collector = interaction.channel.createMessageComponentCollector({
       filter,
-      ComponentType: ComponentType.SelectMenu,
+      ComponentType: ComponentType.StringSelect,
     });
 
     collector.on("collect", (interaction) => {
