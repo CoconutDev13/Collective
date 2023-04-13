@@ -14,7 +14,7 @@ module.exports = {
         
         if (!command) 
             return interaction.reply({ content: "Probably that command doesn't exist or it is outdated" });
-
+        console.log(command)
         command.execute(interaction);
     }
 };
