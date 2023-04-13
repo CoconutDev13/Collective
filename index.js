@@ -2,6 +2,8 @@ require('dotenv').config();
 
 const { Client, GatewayIntentBits, Partials, Collection } = require('discord.js');
 
+console.log("Kuriakos update for testing git")
+
 const {Guilds, GuildMembers, GuildMessages} = GatewayIntentBits;
 const {User, Message, GuildMember, ThreadMember } = Partials;
 
@@ -18,4 +20,4 @@ client.commands = new Collection();
 client.login(process.env.TOKEN).then(() =>{
     loadEvents(client);
     loadCommands(client);
-})
+})  
