@@ -1,10 +1,13 @@
-const {SlashCommandBuilder, SlashCommandBuilderInteraction, PermissionFlagsBits} = require('discord.js')
+const { SlashCommandBuilder } = require('@discordjs/builders');
 
 module.exports = {
-	data: new SlashCommandBuilder()
-		.setName('ping')
-		.setDescription('Replies with Pong!'),
-	async execute(interaction) {
-		await interaction.reply('Pong!');
-	},
+  data: new SlashCommandBuilder()
+    .setName('ping')
+    .setDescription('Ping command to measure bot latency'),
+  async execute(interaction) {
+    const sentTimestamp = new Date();
+    await interaction.reply({ content: 'Pinging...', fetchReply: true });
+    const ping = new Date() - sentTimestamp;
+    await interaction.editReply(`Pong! Latency is ${ping}ms.`);
+  },
 };
