@@ -8,6 +8,6 @@ module.exports = {
     const sentTimestamp = new Date();
     await interaction.reply({ content: 'Pinging...', fetchReply: true });
     const ping = new Date() - sentTimestamp;
-    await interaction.editReply(`Pong! Latency is ${ping}ms.`);
+    await interaction.editReply(`🏓 Latency is ${ping}ms.`);
   },
 };
